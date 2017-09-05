@@ -4,7 +4,7 @@ let filename = fsi.CommandLineArgs.[1];
 let lines = System.IO.File.ReadLines(filename);
 
 let parsedLines = lines
-                |> Seq.map(fun x -> x.Replace(";",";\n"))
+                |> Seq.map(fun x -> x.Replace(");",");\n")) // based on Tibi's suggestion
                 |> Seq.map(fun x -> x.Split('\n'))
                 |> Seq.concat
                 |> Seq.map(fun x -> x.Trim(' '))
